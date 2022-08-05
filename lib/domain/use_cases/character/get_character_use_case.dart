@@ -2,7 +2,6 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_ddd_practice/data/repositories/repositories.dart';
 import 'package:riverpod_ddd_practice/domain/entities/character.dart';
-import 'package:riverpod_ddd_practice/domain/entities/character_list.dart';
 import 'package:riverpod_ddd_practice/domain/repositories/failure.dart';
 import 'package:riverpod_ddd_practice/domain/repositories/repositories.dart'
     show CharacterRepository;

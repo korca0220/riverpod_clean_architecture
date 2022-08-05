@@ -17,30 +17,27 @@ class Home extends ConsumerWidget {
                 color: Colors.red,
               ),
               onTap: () {
-                ref
-                    .watch(viewModel.getCharacterProvider.notifier)
-                    .addCharacter();
+                viewModel.addCharacterList();
               },
             ),
           ),
           Expanded(
-            child: ref.watch(viewModel.getCharacterProvider).maybeWhen(
-                  orElse: () => const Center(child: Text('No Data')),
-                  loading: () =>
-                      const Center(child: CircularProgressIndicator()),
-                  success: (value) => ListView.builder(
-                    itemCount: value.length,
+            child: viewModel.isLoading
+                ? const Center(child: CircularProgressIndicator())
+                : ListView.builder(
+                    itemCount: viewModel.characterList.length,
                     itemBuilder: ((context, index) {
                       return ListTile(
-                        title: Text(value[index].characterName),
+                        title:
+                            Text(viewModel.characterList[index].characterName),
                         subtitle: SizedBox(
                           height: 100,
-                          child: Image.network(value[index].characterImgUrl),
+                          child: Image.network(
+                              viewModel.characterList[index].characterImgUrl),
                         ),
                       );
                     }),
                   ),
-                ),
           ),
         ]),
       ),

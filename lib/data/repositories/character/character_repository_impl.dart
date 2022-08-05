@@ -5,7 +5,6 @@ import 'package:riverpod_ddd_practice/data/sources/remote/apis/characters_api.da
 import 'package:riverpod_ddd_practice/data/sources/remote/client.dart';
 import 'package:riverpod_ddd_practice/domain/entities/character.dart';
 import 'package:dartz/dartz.dart';
-import 'package:riverpod_ddd_practice/domain/entities/character_list.dart';
 import 'package:riverpod_ddd_practice/domain/repositories/character/character_repository.dart';
 import 'package:riverpod_ddd_practice/domain/repositories/failure.dart';
 
